@@ -1,0 +1,20 @@
+RewriteEngine On 
+
+RewriteRule ^auth/login$ user-authentication.php [L]
+RewriteRule ^auth/register$ user-registration.php [L]
+RewriteRule ^auth/logout$ user-logout.php [L]
+RewriteRule ^user/profile$ user-profile.php [L]
+RewriteRule ^user/tasks$ tasks-get-create.php [L]
+RewriteRule ^user/tasks/([0-9]+)$ tasks-update-delete.php?id=$1 [L,QSA]
+RewriteRule ^user/tasks/search$ search-task.php [L]
+RewriteRule ^user/tasks/files$ files.php [L]
+RewriteRule ^user/tasks/files/([0-9]+)$ files.php?id=$1 [L,QSA]
+RewriteRule ^user/tasks/files/([0-9]+)$ download.php?id=$1 [L,QSA]
+
+<IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "*"
+   Header set Access-Control-Allow-Headers "access, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+   Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, HEAD, PUT, DELETE"
+   Header set Access-Control-Allow-Credentials "true"
+   Header set Access-Control-Allow-Headers "*"
+</IfModule>
