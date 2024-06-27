@@ -10,6 +10,9 @@ RewriteRule ^user/tasks/search$ search-task.php [L]
 RewriteRule ^user/tasks/files$ files.php [L]
 RewriteRule ^user/tasks/files/([0-9]+)$ files.php?id=$1 [L,QSA]
 RewriteRule ^user/tasks/files/([0-9]+)$ download.php?id=$1 [L,QSA]
+RewriteRule ^admin/users$ users.php [L]
+RewriteRule ^admin/users/banned$ users-banned-get.php [L]
+RewriteRule ^admin/users/banned/([0-9]+)$ users-banned.php?id=$1 [L,QSA]
 
 <IfModule mod_headers.c>
    Header set Access-Control-Allow-Origin "*"
